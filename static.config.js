@@ -2,6 +2,8 @@ import path from 'path'
 import axios from 'axios'
 
 export default {
+  siteRoot: "https://stikkireddy.github.io/",
+  basePath: "interactive-db",
   getRoutes: async () => {
     const { data: posts } = await axios.get(
       'https://jsonplaceholder.typicode.com/posts'
