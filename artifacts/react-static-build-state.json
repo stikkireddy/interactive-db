@@ -1,0 +1,62 @@
+{
+  "prefetchRate": 5,
+  "maxThreads": null,
+  "disableRoutePrefixing": false,
+  "outputFileRate": 100,
+  "extensions": [
+    ".js",
+    ".jsx"
+  ],
+  "minLoadTime": 200,
+  "disablePreload": false,
+  "disableRuntime": false,
+  "preloadPollInterval": 300,
+  "productionSourceMaps": false,
+  "silent": false,
+  "entry": "index.js",
+  "plugins": [
+    [
+      "/Users/Sri.Tikkireddy/PycharmProjects/interactive-db/node_modules/react-static-plugin-source-filesystem/node.api.js",
+      {
+        "location": "/Users/Sri.Tikkireddy/PycharmProjects/interactive-db/src/pages"
+      }
+    ],
+    "/Users/Sri.Tikkireddy/PycharmProjects/interactive-db/node_modules/react-static-plugin-reach-router/browser.api.js",
+    "/Users/Sri.Tikkireddy/PycharmProjects/interactive-db/node_modules/react-static-plugin-sitemap/dist/node.api.js",
+    "/Users/Sri.Tikkireddy/PycharmProjects/interactive-db"
+  ],
+  "paths": {
+    "ROOT": "/Users/Sri.Tikkireddy/PycharmProjects/interactive-db",
+    "SRC": "/Users/Sri.Tikkireddy/PycharmProjects/interactive-db/src",
+    "DIST": "/Users/Sri.Tikkireddy/PycharmProjects/interactive-db/dist",
+    "ASSETS": "/Users/Sri.Tikkireddy/PycharmProjects/interactive-db/dist",
+    "PLUGINS": "/Users/Sri.Tikkireddy/PycharmProjects/interactive-db/plugins",
+    "TEMP": "/Users/Sri.Tikkireddy/PycharmProjects/interactive-db/tmp",
+    "ARTIFACTS": "/Users/Sri.Tikkireddy/PycharmProjects/interactive-db/artifacts",
+    "PUBLIC": "/Users/Sri.Tikkireddy/PycharmProjects/interactive-db/public",
+    "NODE_MODULES": "/Users/Sri.Tikkireddy/PycharmProjects/interactive-db/node_modules",
+    "EXCLUDE_MODULES": "/Users/Sri.Tikkireddy/PycharmProjects/interactive-db/node_modules",
+    "PACKAGE": "/Users/Sri.Tikkireddy/PycharmProjects/interactive-db/package.json",
+    "HTML_TEMPLATE": "/Users/Sri.Tikkireddy/PycharmProjects/interactive-db/dist/index.html",
+    "STATIC_DATA": "/Users/Sri.Tikkireddy/PycharmProjects/interactive-db/dist/staticData"
+  },
+  "siteRoot": "/",
+  "basePath": "",
+  "publicPath": "/",
+  "assetsPath": "",
+  "extractCssChunks": false,
+  "inlineCss": false,
+  "babelExcludes": [],
+  "devServer": {
+    "host": "localhost",
+    "port": 3000
+  },
+  "terser": {
+    "terserOptions": {
+      "mangle": {},
+      "parse": {},
+      "compress": {},
+      "output": {}
+    }
+  }
+}
