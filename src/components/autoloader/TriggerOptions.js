@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import Select from 'react-select';
 import CreatableSelect from 'react-select/creatable'
-import {useCustomContext} from "../../pages/Ctx";
+import {useCustomContext} from "../Ctx";
 import {autoloaderOptionActions} from "./options";
 import {Col, Container, Row} from "react-bootstrap";
 

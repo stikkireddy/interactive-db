@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import {Accordion, Col, Container, Row} from "react-bootstrap";
 import AceEditor from "react-ace";
 import AutoloaderFormatOptions from "../components/autoloader/FormatOptions"
-import CustomContext from "./Ctx";
+import CustomContext from "../components/Ctx";
 
 import "ace-builds/src-noconflict/mode-python";
 import "ace-builds/src-noconflict/theme-textmate";

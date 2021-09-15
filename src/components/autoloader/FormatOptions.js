@@ -1,6 +1,6 @@
 import  React from "react";
 import Select from 'react-select';
-import {useCustomContext} from "../../pages/Ctx";
+import {useCustomContext} from "../Ctx";
 import {autoloaderOptionActions} from "./options";
 
 const autoloaderFormatOptions = [
