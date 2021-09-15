@@ -14,8 +14,6 @@
   "productionSourceMaps": false,
   "silent": false,
   "entry": "index.js",
-  "siteRoot": "https://stikkireddy.github.io",
-  "basePath": "interactive-db",
   "plugins": [
     [
       "/Users/Sri.Tikkireddy/PycharmProjects/interactive-db/node_modules/react-static-plugin-source-filesystem/node.api.js",
@@ -42,7 +40,9 @@
     "HTML_TEMPLATE": "/Users/Sri.Tikkireddy/PycharmProjects/interactive-db/dist/index.html",
     "STATIC_DATA": "/Users/Sri.Tikkireddy/PycharmProjects/interactive-db/dist/staticData"
   },
-  "publicPath": "https://stikkireddy.github.io/interactive-db/",
+  "siteRoot": "/",
+  "basePath": "",
+  "publicPath": "/",
   "assetsPath": "",
   "extractCssChunks": false,
   "inlineCss": false,
