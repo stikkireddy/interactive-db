@@ -1,9 +1,8 @@
 import React, {useState} from "react";
 import Select from 'react-select';
 import CreatableSelect from 'react-select/creatable'
-import {useCustomContext} from "../Ctx";
-import {autoloaderOptionActions} from "./options";
 import {Col, Container, Row} from "react-bootstrap";
+import CheckBox from "../CheckBox";
 
 const processTimeUnitOptions = [
     {value: "minutes", label: "minutes"},
@@ -19,24 +18,26 @@ const processTimeQtyOptions = [
     {value: "60", label: "60"},
 ]
 
-function AutoloaderTriggerOptions() {
-    const Checkbox = props => <input type="checkbox" {...props} />;
-    // const {isBatch, setIsBatch} = useState(true)
-    const {state, dispatch} = useCustomContext();
+function AutoloaderTriggerOptions(props) {
+    // const Checkbox = props => <input type="checkbox" {...props} />;
+
     return (<div>
-            <Checkbox
+            <CheckBox
+                hidden={false}
                 id={"batch"}
-                checked={state.trigger_once}
-                onChange={(s) => {
-                    dispatch({option: autoloaderOptionActions._trigger_once, value: !state.trigger_once})
-                    dispatch({option: autoloaderOptionActions._reset_processing_time})
+                name={"Ingest Data in a Scheduled Batch?"}
+                checked={props.aLoaderConfig.trigger_once}
+                onChange={() => {
+                    props.setALoaderConfig({
+                        trigger_once: !props.aLoaderConfig.trigger_once,
+                        processing_time: {qty: null, units: null}
+                    })
                 }}
             />
-            <label htmlFor={"batch"}>&nbsp;&nbsp;Ingest Data in a Scheduled Batch?</label>
-            <br hidden={state.trigger_once}/>
-            <br hidden={state.trigger_once}/>
-            <p hidden={state.trigger_once}>Stream ingest data every:</p>
-            <Container hidden={state.trigger_once}>
+            <br hidden={props.aLoaderConfig.trigger_once}/>
+            <br hidden={props.aLoaderConfig.trigger_once}/>
+            <p hidden={props.aLoaderConfig.trigger_once}>Stream ingest data every:</p>
+            <Container hidden={props.aLoaderConfig.trigger_once}>
                 <Row>
                     <Col>
                         <CreatableSelect
@@ -45,17 +46,26 @@ function AutoloaderTriggerOptions() {
                             onChange={(e) => {
                                 if (e == null) {
                                     //return null value for qty because the value was cleared
-                                    dispatch({option: autoloaderOptionActions._processing_time_qty, value: e})
+                                    props.setALoaderConfig({processing_time: {qty: null, units: null}})
                                     return
                                 }
-                                dispatch({option: autoloaderOptionActions._processing_time_qty, value: e.value})
+                                props.setALoaderConfig({
+                                    processing_time:
+                                        {
+                                            qty: e.value,
+                                            units: props.aLoaderConfig.processing_time.units
+                                        }
+                                })
                             }}/>
                     </Col>
                     <Col>
                         <Select options={processTimeUnitOptions}
-                                onChange={(e) => dispatch({
-                                    option: autoloaderOptionActions._processing_time_units,
-                                    value: e.value
+                                onChange={(e) => props.setALoaderConfig({
+                                    processing_time:
+                                        {
+                                            qty: props.aLoaderConfig.processing_time.qty,
+                                            units: e.value
+                                        }
                                 })}
                         />
                     </Col>

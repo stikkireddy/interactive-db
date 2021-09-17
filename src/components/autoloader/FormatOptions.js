@@ -1,7 +1,5 @@
 import  React from "react";
 import Select from 'react-select';
-import {useCustomContext} from "../Ctx";
-import {autoloaderOptionActions} from "./options";
 
 const autoloaderFormatOptions = [
     {value: "csv", label: "CSV"},
@@ -13,13 +11,12 @@ const autoloaderFormatOptions = [
     {value: "text", label: "Text"}
 ]
 
-function AutoloaderFormatOptions() {
-    const { state, dispatch } = useCustomContext();
+function AutoloaderFormatOptions(props) {
     return (<div>
-        Data Format:
+        What format is your data in:
         <Select defaultValue={autoloaderFormatOptions[0]}
             options={autoloaderFormatOptions}
-            onChange={(e) =>dispatch({option: autoloaderOptionActions._format, value: e.value})}
+            onChange={(e) => props.setALoaderConfig({ format: e.value })}
         />
     </div>);
 }

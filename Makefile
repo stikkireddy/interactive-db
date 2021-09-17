@@ -1,4 +1,8 @@
-default: build
+default: dev
 
-build:
+dev:
 	npm run build
+	npx netlify-cli deploy
+
+prod:
+	netlify deploy --prod
